@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main_content %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <button type="submit">Iniciar sesión</button>
+    </form>
+    <div class="container mt-5">
+        <p>¿No estás registrado?<a href="{% url 'Register' %}">Regístrate aquí</a></p>
+    </div>
+    <div class="container mt-5">
+        <button type="submit" class="btn btn-primary">
+            <span class="glyphicon glyphicon-ok">Iniciar sesión</span>
+        </button>
+        <a href="{% url 'Home' %}" class="btn btn-default">Cancelar</a>
+    </div>
+{% endblock %}
