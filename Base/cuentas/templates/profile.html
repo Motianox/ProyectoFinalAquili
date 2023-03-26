@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main_content %}
+
+<h1 class="text-center">Perfil</h1>
+<h2 class="text-center">{{usuario}} </h2>
+<center>
+    <h2><img height="40px" src="{{avatar}}" class="text-center"></h2>
+    <h4>Descripción</h3>
+    <p>{{description}}</p>
+    <a href="{{links}}" class="btn btn-default">Enlace asociado</a>
+</center>
+<div class="container mt-5; text-center">
+    <a href="{% url 'AddInfo' %}" class="btn btn-default">Agregar/editar información</a>
+</div>
+<div class="container mt-5; text-center">
+    <a href="{% url 'UpdateAcc' %}" class="btn btn-default">Editar perfil</a>
+</div>
+
+{% endblock %}

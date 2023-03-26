@@ -7,6 +7,9 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Blog Home - Start Bootstrap Template</title>
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -25,8 +28,18 @@
                             <li class="nav-item"><a class="nav-link" href="{% url 'Login' %}">Iniciar sesión</a></li>
                         {% endif %}
                         {% if user.is_authenticated %}
-                            <li class="nav-item"><a class="nav-link" href="#!">Perfil</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'Logout' %}">Cerrar sesión</a></li>
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false" style="color:white">
+                                <img height="30px" src="{{avatar}}">
+                                <span class="caret"></span>
+                                {{user.username}}
+                            </button>
+                            <div class="dropdown-menu bg-white" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="{% url 'Profile' %}">Perfil</a>
+                                <a class="dropdown-item" href="{% url 'AddAvatar' %}">Agregar avatar</a>
+                                <a class="dropdown-item" href="{% url 'Logout' %}">Cerrar sesión</a>
+                            </div>
+                        </div>
                             <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Postear</a></li>
                         {% endif %}
                     </ul>
