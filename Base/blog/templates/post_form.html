@@ -2,16 +2,16 @@
 {% load static %}
 
 {% block main_content %}
+<center>
 <div class="container mt-5">
-    <form action="" method="POST">
+    <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        {{miFormulario.as_p}}
+        {{form.as_p}}
         <button type="submit" class="btn btn-primary">
-            <span class="glyphicon glyphicon-ok">Enviar</span>
+            <span class="glyphicon glyphicon-ok">Subir</span>
         </button>
-        <a href="{% url 'Profile' %}" class="btn btn-default">Cancelar</a>
+        <a href="{% url 'Home' %}" class="btn btn-default">Cancelar</a>
     </form>
-    <br><br><br><br><br>
 </div>
-
+</center>
 {% endblock %}

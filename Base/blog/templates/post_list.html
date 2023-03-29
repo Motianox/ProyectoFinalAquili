@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+<header class="py-5 bg-light border-bottom mb-4">
+    <div class="container">
+        <div class="text-center my-5">
+            <h1 class="fw-bolder">Todos los posts</h1>
+        </div>
+    </div>
+</header>
+{% endblock header %}
+{% block main_content %}
+
+{% for post in object_list %}
+<div class="card mb-4">
+    <a href="#!"><img class="card-img-top" src="{{post.image.url}}" alt="..." class=""/></a>
+    <div class="card-body">
+        <div class="small text-muted">{{post.author}}, {{post.date}}.</div>
+        <h2 class="card-title">{{post.title}}</h2>
+        <p class="card-text">{{post.subtitle}}</p>
+        <a class="btn btn-primary" href="{% url 'Detail' post.id %}">Leer más →</a>
+        {% if post.author == request.user %}
+            <a class="btn btn-primary" href="{% url 'Update' post.id %}">Editar post</a>
+            <a class="btn btn-danger" href="{% url 'Delete' post.id %}">Eliminar post</a>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
+{% endblock main_content %}

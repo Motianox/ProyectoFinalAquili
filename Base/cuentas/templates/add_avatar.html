@@ -5,11 +5,13 @@
 
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
+    <br><br>
     {{miFormulario.as_p}}
     <button type="submit" class="btn btn-primary">
         <span class="glyphicon glyphicon-ok">Actualizar</span>
     </button>
     <a href="{% url 'Home' %}" class="btn btn-default">Cancelar</a>
+    <br><br><br><br><br><br>
 </form>
 
 {% endblock %}

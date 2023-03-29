@@ -3,9 +3,10 @@
 
 {% block main_content %}
     <form action="" method="POST">
+        <br><br>
         {% csrf_token %}
         {{form.as_p}}
-
+        
         <div class="container mt-5">
             <button type="submit" class="btn btn-primary">
                 <span class="glyphicon glyphicon-ok">Iniciar sesión</span>

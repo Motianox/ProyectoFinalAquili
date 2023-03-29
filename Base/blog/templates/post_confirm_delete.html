@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main_content %}
+<center>
+    <form method="POST">
+        {% csrf_token %}
+        <br><br><br>
+        <h3>¿Estás seguro de que vas a borrar este post?</h3>
+        <div class="container mt-5">
+            <button type="submit" class="btn btn-danger">
+                <span class="glyphicon glyphicon-ok">Eliminar</span>
+            </button>
+            <a href="{% url 'Posts' %}" class="btn btn-default">Cancelar</a>
+        </div>
+    </form>
+    <br><br><br><br><br>
+</center>
+{% endblock %}
