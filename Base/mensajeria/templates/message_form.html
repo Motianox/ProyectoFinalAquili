@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main_content %}
+<center>
+    <div class="container mt-5">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" class="btn btn-primary">
+                <span class="glyphicon glyphicon-ok">Enviar</span>
+            </button>
+            <a href="{% url 'Messages' %}" class="btn btn-default">Cancelar</a>
+        </form>
+        <br><br><br><br><br>
+    </div>
+</center>
+{% endblock main_content %}

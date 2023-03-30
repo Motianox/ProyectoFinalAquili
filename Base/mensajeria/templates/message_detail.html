@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main_content %}
+{% for mensaje in autor.sender.all %}
+    {% if mensaje.reciever == request.user %}
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="small text-muted">{{ mensaje.sender }}</div>
+                <p>{{ mensaje.content }}</p>
+                <div class="small text-muted">{{mensaje.date}}</div>
+            </div>
+        </div>
+        <br><br><br><br>
+    {% endif %}
+{% endfor %}
+{% endblock main_content %}

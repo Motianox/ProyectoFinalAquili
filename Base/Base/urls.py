@@ -25,6 +25,7 @@ urlpatterns = [
     path('', views.home, name='Home'),
     path('accounts/', include('cuentas.urls')),
     path('pages/', include('blog.urls')),
+    path('message/', include('mensajeria.urls')),
 ]
 
 if settings.DEBUG:

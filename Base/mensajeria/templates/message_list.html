@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+<header class="py-5 bg-light border-bottom mb-4">
+    <div class="container">
+        <div class="text-center my-5">
+            <h1 class="fw-bolder">Todos los mensajes</h1>
+        </div>
+    </div>
+</header>
+{% endblock header %}
+{% block main_content %}
+
+<center>
+    <a class="btn btn-primary" href="{% url 'Create' %}">Enviar un mensaje</a>
+    <br><br>
+</center>
+
+{% for author in authors %}
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="small text-muted">Mensajes de {{ author.author }}</div>
+            <br>
+            <a class="btn btn-primary" href="{% url 'Detail' author.messages.0.id %}">Ver mensajes</a>
+        </div>
+    </div>
+    <p><br><br><br></p>
+{% endfor %}
+{% endblock main_content %}
