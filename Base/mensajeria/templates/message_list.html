@@ -13,7 +13,7 @@
 {% block main_content %}
 
 <center>
-    <a class="btn btn-primary" href="{% url 'Create' %}">Enviar un mensaje</a>
+    <a class="btn btn-primary" href="{% url 'CreateMessage' %}">Enviar un mensaje</a>
     <br><br>
 </center>
 
@@ -22,7 +22,7 @@
         <div class="card-body">
             <div class="small text-muted">Mensajes de {{ author.author }}</div>
             <br>
-            <a class="btn btn-primary" href="{% url 'Detail' author.messages.0.id %}">Ver mensajes</a>
+            <a class="btn btn-primary" href="{% url 'MessageDetail' author.messages.0.id %}">Ver mensajes</a>
         </div>
     </div>
     <p><br><br><br></p>

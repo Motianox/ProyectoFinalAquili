@@ -3,6 +3,6 @@ from .views import *
 
 urlpatterns = [
     path('', MessageList.as_view(), name="Messages"),
-    path('create', MessageCreate.as_view(), name='Create'),
-    path('<pk>', MessageDetail.as_view(), name="Detail"),
+    path('create', MessageCreate.as_view(), name='CreateMessage'),
+    path('<pk>', MessageDetail.as_view(), name="MessageDetail"),
 ]

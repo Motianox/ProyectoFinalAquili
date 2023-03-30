@@ -4,3 +4,10 @@
 {% block header %}
 {% include 'pieces/header.html'%}
 {% endblock %}
+{% block main_content %}
+<center>
+<div class="container mt-5">
+    <a href="{% url 'Posts' %}">Ver noticias</a>
+</div>
+</center>
+{% endblock main_content %}
