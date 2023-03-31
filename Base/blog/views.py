@@ -15,6 +15,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 def home(request):
     return render(request, 'home.html')
 
+def aboutme(request):
+    return render(request, 'aboutme.html')
+
 class PostCreate(CreateView, LoginRequiredMixin):
     model = Post
     template_name = 'post_form.html'

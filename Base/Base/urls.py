@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from blog.views import aboutme
 
 from blog import views
 
@@ -26,6 +27,7 @@ urlpatterns = [
     path('accounts/', include('cuentas.urls')),
     path('pages/', include('blog.urls')),
     path('message/', include('mensajeria.urls')),
+    path('aboutme', aboutme, name='AboutMe'),
 ]
 
 if settings.DEBUG:
